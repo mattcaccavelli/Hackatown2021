@@ -1,0 +1,33 @@
+{
+    "name": "InputMaster",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "9626517d-5102-4497-91f2-7367f306466a",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "16bdffa5-b7bc-45c6-bce9-2f24c075cba9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6f294426-98d3-4ef9-8b94-75950e80811e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
