@@ -26,4 +26,33 @@ public class Player : MonoBehaviour
     {
         moveDirection = dir.normalized;
     }
+
+    public void Interact()
+    {
+        //determine the gametile of the current position vector
+        
+        
+        int xPos = (int)transform.position.x;
+        int yPos = (int)transform.position.y; 
+
+        GameTile currentTile = FarmManager.gameTiles[xPos,yPos];
+
+        switch (currentTile.tiletype){
+
+            case TileType.Plot:
+                currentTile.Plant();
+                break;
+
+            case TileType.Crop:
+                currentTile.Harvest();
+                break;
+
+            default:
+                break;
+
+
+        }
+        
+    }
+
 }
