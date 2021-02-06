@@ -10,10 +10,10 @@ public class FarmManager : MonoBehaviour
     public int mapSize;
 
     public static Player player;
-    public Tilemap tilemap;
+    public static Tilemap tilemap;
+    public static TileSet tileset;
 
-    public Tile[] grassTiles;
-    public Tile plotTile;
+    public TileSet tileSetAsset;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +21,20 @@ public class FarmManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameTiles = new GameTile[mapSize, mapSize];
         tilemap = GetComponentInChildren<Tilemap>();
+        tileset = tileSetAsset;
 
         for(int x = 0; x < mapSize; x++)
         {
             for (int y = 0; y < mapSize; y++)
             {
                 gameTiles[x, y] = new GameTile(x, y);
-                SetTile(x, y, grassTiles[Random.Range(0, grassTiles.Length)]);
+                SetTile(x, y, tileset.grassTiles[Random.Range(0, tileset.grassTiles.Length)]);
             }
         }
 
     }
 
-    void SetTile(int x, int y, Tile tile)
+    public static void SetTile(int x, int y, Tile tile)
     {
         tilemap.SetTile(new Vector3Int(x, y, 0), tile);
     }
@@ -43,4 +44,12 @@ public class FarmManager : MonoBehaviour
     {
         
     }
+}
+
+
+[System.Serializable]
+public class TileSet
+{
+    public Tile[] grassTiles;
+    public Tile plotTile;
 }
