@@ -5,12 +5,18 @@ using UnityEngine;
 public class GameTile
 {
     public Vector2 position;
-    public TileType tiletype;
+    public TileType tiletype = TileType.Grass;
 
     public float timer = 0;
 
     public int stage = 0;
     int stepTime = 0;
+
+    public GameTile(int _x, int _y)
+    {
+        position.x = _x;
+        position.y = _y;
+    }
 
     public void Plant()
     {
@@ -22,6 +28,10 @@ public class GameTile
 
     }
 
+    public void Till()
+    {
+
+    }
 
 
 }
