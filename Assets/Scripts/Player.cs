@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public float speed;
     public float score;
 
+    public Vector2 moveDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += (Vector3)(moveDirection * speed * Time.deltaTime);
+    }
+
+    public void SetMove(Vector2 dir)
+    {
+        moveDirection = dir.normalized;
     }
 }
