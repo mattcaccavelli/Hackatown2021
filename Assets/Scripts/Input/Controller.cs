@@ -15,5 +15,6 @@ public class Controller : MonoBehaviour
         controls.Default.Move.performed += ctx => FarmManager.player.SetMove(ctx.ReadValue<Vector2>());
         controls.Default.Move.canceled += _ => FarmManager.player.SetMove(Vector2.zero);
 
+        controls.Default.Interact.performed += _ => FarmManager.player.Interact();
     }
 }

@@ -47,6 +47,10 @@ public class Player : MonoBehaviour
                 currentTile.Harvest();
                 break;
 
+            case TileType.Grass:
+                currentTile.Till();
+                break;
+
             default:
                 break;
 
