@@ -480,8 +480,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc51e8b28efb3546bc1f0999e540f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: 0
-  tilemap: {fileID: 0}
+  mapSize: 20
+  tilemap: {fileID: 306124238}
+  grassTiles:
+  - {fileID: 11400000, guid: 74231e3c248e19b4cb3523314b3ab901, type: 2}
+  - {fileID: 11400000, guid: 9b0d533872aafc1489656690d22ca19d, type: 2}
+  - {fileID: 11400000, guid: 36191a49b692cbe4181b11667d5bfcc5, type: 2}
+  - {fileID: 11400000, guid: a03bd21dd0f0a984bb57736eeec9f465, type: 2}
+  plotTile: {fileID: 0}
 --- !u!114 &1582268136
 MonoBehaviour:
   m_ObjectHideFlags: 0
