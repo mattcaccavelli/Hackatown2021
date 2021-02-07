@@ -24,14 +24,17 @@ public class GameTile
 
     public void Plant(Crop crop)
     {
-        currentCrop = crop;
-        timer = 0;
-        stage = 0;
-        cropHealth = currentCrop.witherTime;
-        stepTime = crop.GetStepTime();
-        FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[0]);
-        tiletype = TileType.Crop;
-        FarmManager.player.score -= currentCrop.pointCost;
+        if (FarmManager.player.score >= crop.pointCost)
+        {
+            currentCrop = crop;
+            timer = 0;
+            stage = 0;
+            cropHealth = currentCrop.witherTime;
+            stepTime = crop.GetStepTime();
+            FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[0]);
+            tiletype = TileType.Crop;
+            FarmManager.player.score -= currentCrop.pointCost;
+        }
     }
 
     public void Harvest()

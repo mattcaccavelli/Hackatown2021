@@ -11,12 +11,12 @@ public class CoinCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinCounter.text = "";
+        coinCounter = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinCounter.text = "" + FarmManager.player.score;
+        coinCounter.text = "Score: " + FarmManager.player.score;
     }
 }
