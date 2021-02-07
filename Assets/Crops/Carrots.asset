@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eeb025bb01c56b4093568ea3e1c5234, type: 3}
+  m_Name: Carrots
+  m_EditorClassIdentifier: 
+  growthTime: 5
+  witherTime: 1
+  icon: {fileID: 0}
+  reward: 0
+  tiles:
+  - {fileID: 11400000, guid: 331bd044730790545be2b8e06bd3642b, type: 2}
+  - {fileID: 11400000, guid: 3902e983613e180468832849fd534956, type: 2}
+  - {fileID: 11400000, guid: fbbf1f87564ca144ba3043445f1bfd25, type: 2}

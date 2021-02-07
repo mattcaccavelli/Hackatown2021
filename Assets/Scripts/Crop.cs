@@ -9,8 +9,14 @@ using UnityEngine.Tilemaps;
 public class Crop : ScriptableObject
 {
     public float growthTime;
-    public Tile[] tiles;
+    public float witherTime;
 
+    public Sprite icon;
     public float reward;
 
+    public Tile[] tiles;
+    public float GetStepTime()
+    {
+        return growthTime / tiles.Length;
+    }
 }

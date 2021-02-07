@@ -10,7 +10,8 @@ public class FarmManager : MonoBehaviour
     public int mapSize;
 
     public static Player player;
-    public static Tilemap tilemap;
+    public static Tilemap floorTilemap;
+    public static Tilemap mainTilemap;
     public static TileSet tileset;
 
     public TileSet tileSetAsset;
@@ -20,7 +21,8 @@ public class FarmManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameTiles = new GameTile[mapSize, mapSize];
-        tilemap = GetComponentInChildren<Tilemap>();
+        floorTilemap = transform.GetChild(0).GetComponent<Tilemap>();
+        mainTilemap = transform.GetChild(1).GetComponent<Tilemap>();
         tileset = tileSetAsset;
 
         for(int x = 0; x < mapSize; x++)
@@ -28,21 +30,29 @@ public class FarmManager : MonoBehaviour
             for (int y = 0; y < mapSize; y++)
             {
                 gameTiles[x, y] = new GameTile(x, y);
-                SetTile(x, y, tileset.grassTiles[Random.Range(0, tileset.grassTiles.Length)]);
+                SetFloorTile(x, y, tileset.grassTiles[Random.Range(0, tileset.grassTiles.Length)]);
             }
         }
 
     }
 
-    public static void SetTile(int x, int y, Tile tile)
+    public static void SetFloorTile(int x, int y, Tile tile)
     {
-        tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+        floorTilemap.SetTile(new Vector3Int(x, y, 0), tile);
+    }
+
+    public static void SetMainTile(int x, int y, Tile tile)
+    {
+        mainTilemap.SetTile(new Vector3Int(x, y, 0), tile);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        foreach(GameTile g in gameTiles)
+        {
+            g.UpdateTile();
+        }
     }
 }
 

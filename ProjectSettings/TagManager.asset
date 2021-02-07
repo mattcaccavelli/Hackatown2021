@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 3094741765
+    locked: 0
+  - name: Main
+    uniqueID: 3447194539
+    locked: 0
+  - name: Overhead
+    uniqueID: 2702878661
+    locked: 0
+  - name: UI
+    uniqueID: 3820935487
+    locked: 0

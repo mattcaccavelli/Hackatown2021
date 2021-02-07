@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public float speed;
     public float score;
 
+    public Crop crop;
+
     public Vector2 moveDirection;
 
     // Start is called before the first frame update
@@ -40,10 +42,11 @@ public class Player : MonoBehaviour
         switch (currentTile.tiletype){
 
             case TileType.Plot:
-                currentTile.Plant();
+                currentTile.Plant(crop);
                 break;
 
             case TileType.Crop:
+            case TileType.GrownCrop:
                 currentTile.Harvest();
                 break;
 

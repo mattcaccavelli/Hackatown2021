@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GameTile
 {
-    public Vector2 position;
+    public Vector2Int position;
     public TileType tiletype = TileType.Grass;
+    public Crop currentCrop;
 
     public float timer = 0;
 
     public int stage = 0;
-    int stepTime = 0;
+    float stepTime = 0;
 
     public GameTile(int _x, int _y)
     {
@@ -18,23 +19,51 @@ public class GameTile
         position.y = _y;
     }
 
-    public void Plant()
+    public void Plant(Crop crop)
     {
+        currentCrop = crop;
+        timer = 0;
+        stage = 0;
+        stepTime = crop.GetStepTime();
+        FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[0]);
         tiletype = TileType.Crop;
     }
 
     public void Harvest()
     {
+        timer = 0;
+        currentCrop = null;
         tiletype = TileType.Plot;
+        FarmManager.SetMainTile(position.x, position.y, null);
     }
 
     public void Till()
     {
         tiletype = TileType.Plot;
-        FarmManager.SetTile((int)position.x, (int)position.y, FarmManager.tileset.plotTile);
+        FarmManager.SetFloorTile(position.x, position.y, FarmManager.tileset.plotTile);
     }
 
+    public void UpdateTile()
+    {
+        if (currentCrop == null) return;
+
+        timer += Time.deltaTime;
+
+        if(timer >= currentCrop.growthTime)
+        {
+            tiletype = TileType.GrownCrop;
+            return;
+        }
+
+        int step = (int)(timer / stepTime);
+        if(stage != step)
+        {
+            stage = step;
+            FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[stage]);
+
+        }
+    }
 
 }
 
-public enum TileType { Grass, Plot, Crop}
+public enum TileType { Grass, Plot, Crop, GrownCrop}
