@@ -6250,15 +6250,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc51e8b28efb3546bc1f0999e540f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: 20
+  mapSize: {x: 28, y: 20}
   tileSetAsset:
     grassTiles:
     - {fileID: 11400000, guid: 74231e3c248e19b4cb3523314b3ab901, type: 2}
     - {fileID: 11400000, guid: 9b0d533872aafc1489656690d22ca19d, type: 2}
     - {fileID: 11400000, guid: 36191a49b692cbe4181b11667d5bfcc5, type: 2}
     - {fileID: 11400000, guid: a03bd21dd0f0a984bb57736eeec9f465, type: 2}
+    roadTiles:
+    - {fileID: 11400000, guid: b82756a68cee82644b0a879b119cd59a, type: 2}
+    - {fileID: 11400000, guid: d16a1105d07f1d744ad0ce266dfefba7, type: 2}
+    - {fileID: 11400000, guid: b4f2b68f398d20e4aaa79bb4a07e3e8a, type: 2}
+    fenceTiles:
+    - {fileID: 11400000, guid: 7cc03f2061beb0a42a4e12428b784ba7, type: 2}
+    - {fileID: 11400000, guid: ac66c22a1f6633c46b37f0ff302e89a9, type: 2}
+    - {fileID: 11400000, guid: 229ddddee1382f44ca67d28103aac268, type: 2}
     plotTile: {fileID: 11400000, guid: 03d71691294dfac43ac53c0ab821203e, type: 2}
     sparkles: {fileID: 79497167584908868, guid: 20772735332144542bfe1e32e63d5a6d, type: 3}
+    fenceMarker: {fileID: 11400000, guid: f4813b05b4c9c1049ba0e554eae76f98, type: 2}
+    grassMarker: {fileID: 11400000, guid: 2f6a91f8b1558c740999f2e358299f14, type: 2}
+    roadMarker: {fileID: 11400000, guid: 681abb0dd586aa047984ce08864f61cf, type: 2}
 --- !u!114 &1582268136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6437,7 @@ TilemapRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0.49999994, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 3
