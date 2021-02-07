@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growthTime: 5
   witherTime: 1
+  pointCost: 10
+  pointReward: 17
   icon: {fileID: 0}
-  reward: 0
   tiles:
   - {fileID: 11400000, guid: 331bd044730790545be2b8e06bd3642b, type: 2}
   - {fileID: 11400000, guid: 3902e983613e180468832849fd534956, type: 2}

@@ -370,7 +370,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.64
-  score: 0
+  score: 50
+  stamina: 0
+  rechargeRate: 5
+  maxStamina: 100
+  tillCost: 20
   crop: {fileID: 11400000, guid: e5cd94b3318a7a7489233e00c00899dc, type: 2}
   moveDirection: {x: 0, y: 0}
 --- !u!212 &787877433

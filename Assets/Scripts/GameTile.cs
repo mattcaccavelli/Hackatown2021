@@ -33,10 +33,10 @@ public class GameTile
     public void Harvest()
     {
         timer = 0;
+        if(tiletype == TileType.GrownCrop) FarmManager.player.score += currentCrop.pointReward;
         currentCrop = null;
         tiletype = TileType.Plot;
         FarmManager.SetMainTile(position.x, position.y, null);
-        FarmManager.player.score += currentCrop.pointReward;
     }
 
     public void Till()
