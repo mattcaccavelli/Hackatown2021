@@ -20,17 +20,18 @@ public class GameTile
 
     public void Plant()
     {
-
+        tiletype = TileType.Crop;
     }
 
     public void Harvest()
     {
-
+        tiletype = TileType.Plot;
     }
 
     public void Till()
     {
-
+        tiletype = TileType.Plot;
+        FarmManager.SetTile((int)position.x, (int)position.y, FarmManager.tileset.plotTile);
     }
 
 
