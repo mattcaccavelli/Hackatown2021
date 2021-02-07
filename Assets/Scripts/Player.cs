@@ -8,9 +8,14 @@ public class Player : MonoBehaviour
     public float speed;
     public float score;
     public float stamina;
-    public float rechargeRate = 5;
     public float maxStamina = 100;
+    public float rechargeRate = 5;
+
     public int tillCost = 20;
+
+    public int maxCapacity = 10;
+    public int currCapacity;
+    public int pointReserve;
 
     public Crop crop;
 
@@ -54,8 +59,14 @@ public class Player : MonoBehaviour
                 break;
 
             case TileType.Crop:
+                currentTile.HarvestTooSoon();
+                break;
+
             case TileType.GrownCrop:
-                currentTile.Harvest();
+                if (currCapacity < maxCapacity)
+                {
+                    currentTile.Harvest();
+                }
                 break;
 
             case TileType.Grass:
@@ -64,6 +75,12 @@ public class Player : MonoBehaviour
                     stamina -= tillCost;
                     currentTile.Till();
                 }
+                break;
+
+            case TileType.PointDeposit:
+                score += pointReserve;
+                pointReserve = 0;
+                currCapacity = 0;
                 break;
 
             default:

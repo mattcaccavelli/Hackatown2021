@@ -36,13 +36,22 @@ public class GameTile
         currentCrop = null;
         tiletype = TileType.Plot;
         FarmManager.SetMainTile(position.x, position.y, null);
-        FarmManager.player.score += currentCrop.pointReward;
+        FarmManager.player.currCapacity++;
+        FarmManager.player.pointReserve += currentCrop.pointReward;
     }
 
     public void Till()
     {
         tiletype = TileType.Plot;
         FarmManager.SetFloorTile(position.x, position.y, FarmManager.tileset.plotTile);
+    }
+
+    public void HarvestTooSoon()
+    {
+        timer = 0;
+        currentCrop = null;
+        tiletype = TileType.Plot;
+        FarmManager.SetMainTile(position.x, position.y, null);
     }
 
     public void UpdateTile()
@@ -68,4 +77,4 @@ public class GameTile
 
 }
 
-public enum TileType { Grass, Plot, Crop, GrownCrop}
+public enum TileType { Grass, Plot, Crop, GrownCrop, PointDeposit}
