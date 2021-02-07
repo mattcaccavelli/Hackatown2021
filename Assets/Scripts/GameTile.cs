@@ -7,6 +7,7 @@ public class GameTile
     public Vector2Int position;
     public TileType tiletype = TileType.Grass;
     public Crop currentCrop;
+    public float cropHealth;
 
     public float timer = 0;
 
@@ -26,6 +27,7 @@ public class GameTile
         currentCrop = crop;
         timer = 0;
         stage = 0;
+        cropHealth = currentCrop.witherTime;
         stepTime = crop.GetStepTime();
         FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[0]);
         tiletype = TileType.Crop;
@@ -68,12 +70,19 @@ public class GameTile
         {
             tiletype = TileType.GrownCrop;
             sparkle = GameObject.Instantiate(FarmManager.tileset.sparkles, new Vector3(position.x + 0.5f, position.y + 0.6f, 0), Quaternion.identity);
+            timer = 0;
             return;
         }
 
         if(tiletype == TileType.GrownCrop)
         {
-
+            if (currentCrop != null) cropHealth -= Time.deltaTime;
+            if (cropHealth <= 0)
+            {
+                currentCrop = null;
+                tiletype = TileType.Plot;
+                FarmManager.SetMainTile(position.x, position.y, null);
+            }
         }
 
         if (tiletype == TileType.Crop)
