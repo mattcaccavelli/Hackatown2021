@@ -10,9 +10,10 @@ public class Crop : ScriptableObject
 {
     public float growthTime;
     public float witherTime;
+    public int pointCost;
+    public int pointReward;
 
     public Sprite icon;
-    public float reward;
 
     public Tile[] tiles;
     public float GetStepTime()

@@ -27,11 +27,13 @@ public class GameTile
         stepTime = crop.GetStepTime();
         FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[0]);
         tiletype = TileType.Crop;
+        FarmManager.player.score -= currentCrop.pointCost;
     }
 
     public void Harvest()
     {
         timer = 0;
+        if(tiletype == TileType.GrownCrop) FarmManager.player.score += currentCrop.pointReward;
         currentCrop = null;
         tiletype = TileType.Plot;
         FarmManager.SetMainTile(position.x, position.y, null);

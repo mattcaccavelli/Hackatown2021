@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
 
     public float speed;
     public float score;
+    public float stamina;
+    public float rechargeRate = 5;
+    public float maxStamina = 100;
+    public int tillCost = 20;
 
     public Crop crop;
 
@@ -22,6 +26,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         transform.position += (Vector3)(moveDirection * speed * Time.deltaTime);
+        if (stamina < maxStamina)
+        {
+            stamina += rechargeRate * Time.deltaTime;
+        }
     }
 
     public void SetMove(Vector2 dir)
@@ -51,7 +59,11 @@ public class Player : MonoBehaviour
                 break;
 
             case TileType.Grass:
-                currentTile.Till();
+                if (stamina >= tillCost)
+                {
+                    stamina -= tillCost;
+                    currentTile.Till();
+                }
                 break;
 
             default:
