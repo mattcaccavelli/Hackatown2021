@@ -90,4 +90,4 @@ public class GameTile
 
 }
 
-public enum TileType { Grass, Plot, Crop, GrownCrop, PointDeposit}
+public enum TileType { Grass, Road, Fence, Plot, Crop, GrownCrop, PointDeposit}
