@@ -7,7 +7,7 @@ public class FarmManager : MonoBehaviour
 {
 
     public static GameTile[,] gameTiles;
-    public int mapSize;
+    public Vector2Int mapSize;
 
     public static Player player;
     public static Tilemap floorTilemap;
@@ -20,17 +20,40 @@ public class FarmManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        gameTiles = new GameTile[mapSize, mapSize];
+        gameTiles = new GameTile[mapSize.x, mapSize.y];
         floorTilemap = transform.GetChild(0).GetComponent<Tilemap>();
         mainTilemap = transform.GetChild(1).GetComponent<Tilemap>();
         tileset = tileSetAsset;
 
-        for(int x = 0; x < mapSize; x++)
+        for(int x = 0; x < mapSize.x; x++)
         {
-            for (int y = 0; y < mapSize; y++)
+            for (int y = 0; y < mapSize.y; y++)
             {
+
+                Tile marker = (Tile)floorTilemap.GetTile(new Vector3Int(x, y, 0));
                 gameTiles[x, y] = new GameTile(x, y);
-                SetFloorTile(x, y, tileset.grassTiles[Random.Range(0, tileset.grassTiles.Length)]);
+
+                if (marker == tileset.grassMarker)
+                    SetFloorTile(x, y, tileset.grassTiles[Random.Range(0, tileset.grassTiles.Length)]);
+                else if (marker == tileset.roadMarker)
+                {
+                    gameTiles[x, y].tiletype = TileType.Road;
+                    SetFloorTile(x, y, tileset.roadTiles[Random.Range(0, tileset.roadTiles.Length)]);
+                }
+                else if (marker == tileset.fenceMarker)
+                {
+                    gameTiles[x, y].tiletype = TileType.Fence;
+                    SetFloorTile(x, y, tileset.grassTiles[0]);
+
+                }
+            }
+        }
+
+        for (int x = 0; x < mapSize.x; x++)
+        {
+            for (int y = 0; y < mapSize.y; y++)
+            {
+                if(gameTiles[x, y].tiletype == TileType.Fence) SetMainTile(x, y, GetFenceTile(x, y));
             }
         }
 
@@ -56,6 +79,22 @@ public class FarmManager : MonoBehaviour
             g.UpdateTile();
         }
     }
+
+    public Tile GetFenceTile(int x, int y)
+    {
+        if (x > 0 && x < mapSize.x - 1 &&  gameTiles[x - 1,y].tiletype == TileType.Fence && gameTiles[x + 1, y].tiletype == TileType.Fence)
+        {
+            return tileset.fenceTiles[0];
+        }
+        else if (y > 0 && y < mapSize.y - 1 && gameTiles[x, y - 1].tiletype == TileType.Fence && gameTiles[x, y + 1].tiletype == TileType.Fence)
+        {
+            return tileset.fenceTiles[2];
+        }
+        else
+        {
+            return tileset.fenceTiles[1];
+        }
+    }
 }
 
 
@@ -63,7 +102,13 @@ public class FarmManager : MonoBehaviour
 public class TileSet
 {
     public Tile[] grassTiles;
+    public Tile[] roadTiles;
+    public Tile[] fenceTiles;
     public Tile plotTile;
 
     public GameObject sparkles;
+
+    public Tile fenceMarker;
+    public Tile grassMarker;
+    public Tile roadMarker;
 }
