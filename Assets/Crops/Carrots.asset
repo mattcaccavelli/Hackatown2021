@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carrots
   m_EditorClassIdentifier: 
   growthTime: 5
-  witherTime: 1
+  witherTime: 20
   pointCost: 10
   pointReward: 17
   icon: {fileID: 0}

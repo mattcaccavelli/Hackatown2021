@@ -85,6 +85,7 @@ public class GameTile
                 currentCrop = null;
                 tiletype = TileType.Plot;
                 FarmManager.SetMainTile(position.x, position.y, null);
+                if (sparkle != null) GameObject.Destroy(sparkle);
             }
         }
 

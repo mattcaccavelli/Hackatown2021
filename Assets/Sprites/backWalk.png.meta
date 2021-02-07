@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: c2fed7c16d6460a45bacead9239bf098
+guid: 8f1b880dce19ae8428a685782c503afe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 673806336787629765
-    second: markerTiles_0
+      213: 1329790165705573309
+    second: backWalk_0
   - first:
-      213: 2844965729495600823
-    second: markerTiles_1
+      213: -2536385520185340848
+    second: backWalk_1
   - first:
-      213: -3484180632691682873
-    second: markerTiles_2
+      213: -2128270367819651029
+    second: backWalk_2
   - first:
-      213: 515579030033022050
-    second: markerTiles_3
+      213: 2286883549487280263
+    second: backWalk_3
+  - first:
+      213: 6797824631081783142
+    second: backWalk_4
+  - first:
+      213: -1660978197376055536
+    second: backWalk_5
+  - first:
+      213: 6236657222713299870
+    second: backWalk_6
+  - first:
+      213: 1849190581880099426
+    second: backWalk_7
+  - first:
+      213: 7161037650841942236
+    second: backWalk_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,85 +142,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: markerTiles_0
+      name: backWalk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c642a71b47d95900800000000000000
-      internalID: 673806336787629765
+      spriteID: db340b43c1d547210800000000000000
+      internalID: 1329790165705573309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_1
+      name: backWalk_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7beceb8f1495b7720800000000000000
-      internalID: 2844965729495600823
+      spriteID: 05c88e7cec2fcccd0800000000000000
+      internalID: -2536385520185340848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_2
+      name: backWalk_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1dd1fac24b5afc0800000000000000
-      internalID: -3484180632691682873
+      spriteID: b28ae14606dd672e0800000000000000
+      internalID: -2128270367819651029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_3
+      name: backWalk_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c32ca6564b72700800000000000000
-      internalID: 515579030033022050
+      spriteID: 780bfd9c874acbf10800000000000000
+      internalID: 2286883549487280263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backWalk_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fc70d4c79b65e50800000000000000
+      internalID: 6797824631081783142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backWalk_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0174bb5312503f8e0800000000000000
+      internalID: -1660978197376055536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backWalk_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9353b963be0d8650800000000000000
+      internalID: 6236657222713299870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backWalk_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26216fa6905a9a910800000000000000
+      internalID: 1849190581880099426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backWalk_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8b1a97dcd116360800000000000000
+      internalID: 7161037650841942236
       vertices: []
       indices: 
       edges: []

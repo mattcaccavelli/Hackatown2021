@@ -21,10 +21,12 @@ public class Player : MonoBehaviour
 
     public Vector2 moveDirection;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,12 @@ public class Player : MonoBehaviour
         {
             stamina += rechargeRate * Time.deltaTime;
         }
+
+        if (moveDirection.x > 0.4f) animator.SetInteger("walkDir", 2);
+        else if (moveDirection.x < -0.4f) animator.SetInteger("walkDir", 4);
+        else if (moveDirection.y > 0) animator.SetInteger("walkDir", 3);
+        else if (moveDirection.y < 0) animator.SetInteger("walkDir", 1);
+        else animator.SetInteger("walkDir", 0);
     }
 
     public void SetMove(Vector2 dir)

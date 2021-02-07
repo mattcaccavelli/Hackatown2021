@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: c2fed7c16d6460a45bacead9239bf098
+guid: d0284891464a6fa498e5ed36688b2994
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 673806336787629765
-    second: markerTiles_0
+      213: 1749541774688055413
+    second: LeftWalk_0
   - first:
-      213: 2844965729495600823
-    second: markerTiles_1
+      213: -1407193935387293443
+    second: LeftWalk_1
   - first:
-      213: -3484180632691682873
-    second: markerTiles_2
+      213: 8462722237218357344
+    second: LeftWalk_2
   - first:
-      213: 515579030033022050
-    second: markerTiles_3
+      213: 3393941539120560384
+    second: LeftWalk_3
+  - first:
+      213: -1421048434464405954
+    second: LeftWalk_4
+  - first:
+      213: -5436068319367768377
+    second: LeftWalk_5
+  - first:
+      213: 7602259920077387104
+    second: LeftWalk_6
+  - first:
+      213: -3205066636061404697
+    second: LeftWalk_7
+  - first:
+      213: 5986998324056019682
+    second: LeftWalk_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,85 +142,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: markerTiles_0
+      name: LeftWalk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c642a71b47d95900800000000000000
-      internalID: 673806336787629765
+      spriteID: 570fcff79fe974810800000000000000
+      internalID: 1749541774688055413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_1
+      name: LeftWalk_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7beceb8f1495b7720800000000000000
-      internalID: 2844965729495600823
+      spriteID: df808274294a87ce0800000000000000
+      internalID: -1407193935387293443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_2
+      name: LeftWalk_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1dd1fac24b5afc0800000000000000
-      internalID: -3484180632691682873
+      spriteID: 060033e8901a17570800000000000000
+      internalID: 8462722237218357344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: markerTiles_3
+      name: LeftWalk_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c32ca6564b72700800000000000000
-      internalID: 515579030033022050
+      spriteID: 00939b319d3b91f20800000000000000
+      internalID: 3393941539120560384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWalk_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36cf175afb674ce0800000000000000
+      internalID: -1421048434464405954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWalk_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c654514aa43f84b0800000000000000
+      internalID: -5436068319367768377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWalk_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065f66a6e17a08960800000000000000
+      internalID: 7602259920077387104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWalk_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e19a1c20e05583d0800000000000000
+      internalID: -3205066636061404697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftWalk_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2d7385147161350800000000000000
+      internalID: 5986998324056019682
       vertices: []
       indices: 
       edges: []

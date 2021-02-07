@@ -46,6 +46,11 @@ public class FarmManager : MonoBehaviour
                     SetFloorTile(x, y, tileset.grassTiles[0]);
 
                 }
+                else if (marker == tileset.dropoffMarker)
+                {
+                    gameTiles[x, y].tiletype = TileType.PointDeposit;
+                    SetFloorTile(x, y, tileset.roadTiles[0]);
+                }
             }
         }
 
@@ -111,4 +116,6 @@ public class TileSet
     public Tile fenceMarker;
     public Tile grassMarker;
     public Tile roadMarker;
+    public Tile dropoffMarker;
+
 }
