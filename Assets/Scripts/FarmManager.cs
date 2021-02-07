@@ -64,4 +64,6 @@ public class TileSet
 {
     public Tile[] grassTiles;
     public Tile plotTile;
+
+    public GameObject sparkles;
 }

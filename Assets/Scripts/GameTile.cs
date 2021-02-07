@@ -13,6 +13,8 @@ public class GameTile
     public int stage = 0;
     float stepTime = 0;
 
+    public GameObject sparkle;
+
     public GameTile(int _x, int _y)
     {
         position.x = _x;
@@ -39,6 +41,7 @@ public class GameTile
         FarmManager.player.currCapacity++;
         FarmManager.player.pointReserve += currentCrop.pointReward;
         currentCrop = null;
+        if (sparkle != null) GameObject.Destroy(sparkle);
     }
 
     public void Till()
@@ -61,18 +64,27 @@ public class GameTile
 
         timer += Time.deltaTime;
 
-        if(timer >= currentCrop.growthTime)
+        if(timer >= currentCrop.growthTime && tiletype == TileType.Crop)
         {
             tiletype = TileType.GrownCrop;
+            sparkle = GameObject.Instantiate(FarmManager.tileset.sparkles, new Vector3(position.x + 0.5f, position.y + 0.6f, 0), Quaternion.identity);
             return;
         }
 
-        int step = (int)(timer / stepTime);
-        if(stage != step)
+        if(tiletype == TileType.GrownCrop)
         {
-            stage = step;
-            FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[stage]);
 
+        }
+
+        if (tiletype == TileType.Crop)
+        {
+            int step = (int)(timer / stepTime);
+            if (stage != step)
+            {
+                stage = step;
+                FarmManager.SetMainTile(position.x, position.y, currentCrop.tiles[stage]);
+
+            }
         }
     }
 
