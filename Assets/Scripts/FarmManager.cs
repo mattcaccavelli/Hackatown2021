@@ -34,6 +34,8 @@ public class FarmManager : MonoBehaviour
             }
         }
 
+        gameTiles[0, 0].tiletype = TileType.PointDeposit;
+
     }
 
     public static void SetFloorTile(int x, int y, Tile tile)
